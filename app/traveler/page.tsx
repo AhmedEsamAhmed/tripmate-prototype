@@ -11,7 +11,6 @@ import { getTripsFeed } from "@/lib/mock-data";
 export default function TravelerHomePage() {
   const [locationFilter, setLocationFilter] = useState("");
   const [durationFilter, setDurationFilter] = useState("");
-  const [priceFilter, setPriceFilter] = useState("");
   const [showFilters, setShowFilters] = useState(false);
 
   const filteredTrips = getTripsFeed().filter((trip) => {

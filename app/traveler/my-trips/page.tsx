@@ -3,9 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Header } from "@/components/Header";
-import { TripCard } from "@/components/TripCard";
 import { TripStatusBadge } from "@/components/StatusBadge";
-import { getTripsFeed, getOffersFeed, getBookingsFeed } from "@/lib/mock-data";
+import { getTripsFeed, getBookingsFeed } from "@/lib/mock-data";
 import type { TripStatus } from "@/types";
 
 const TABS: { key: TripStatus | "all"; label: string }[] = [

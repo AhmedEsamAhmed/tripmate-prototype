@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { ProfileCard } from "@/components/ProfileCard";
@@ -14,7 +14,6 @@ function formatPrice(amount: number, currency: string) {
 
 export default function TripDetailPage() {
   const params = useParams();
-  const router = useRouter();
   const id = params.id as string;
   const trip = getTripsFeed().find((t) => t.id === id);
   const offer = getOffersFeed().find((o) => o.tripId === id);

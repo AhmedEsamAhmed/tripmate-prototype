@@ -16,7 +16,7 @@ interface ChatProps {
 export function Chat({
   messages,
   currentUserId,
-  currentUserRole,
+  currentUserRole: _currentUserRole,
   onSendMessage,
   placeholder = "Type a message…",
   disabled = false,

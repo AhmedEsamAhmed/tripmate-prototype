@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useCallback } from "react";
-import type { User, UserRole, SupplierType, VerificationStatus } from "@/types";
+import type { User, SupplierType, VerificationStatus } from "@/types";
 
 interface AppContextType {
   user: User | null;
