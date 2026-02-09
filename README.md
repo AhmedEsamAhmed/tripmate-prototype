@@ -1,4 +1,4 @@
-# ViaJalan – Tourism Marketplace Prototype
+# TripMate – Tourism Marketplace Prototype
 
 A mobile-first, interactive UI prototype for a two-sided tourism marketplace. **Travelers** can discover trip requests and pre-designed trips, create custom trips, receive offers, negotiate, book, and manage trips. **Suppliers** (drivers, tour guides, tour agencies) can respond to requests, submit offers, create pre-designed trips (guides/agencies only), and manage active trips.
 
