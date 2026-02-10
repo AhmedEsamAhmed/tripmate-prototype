@@ -5,8 +5,6 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 
-const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-
 export default function SupplierAvailabilityPage() {
   const [availability, setAvailability] = useState("Mon–Sat, 8AM–6PM");
   const [notes, setNotes] = useState("");

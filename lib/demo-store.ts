@@ -3,7 +3,7 @@
  * Replaces static mock data when we need to add/update entities.
  */
 
-import type { Trip, Offer, Booking, ChatMessage } from "@/types";
+import type { Trip, Offer, Booking } from "@/types";
 
 let trips: Trip[] = [
   {

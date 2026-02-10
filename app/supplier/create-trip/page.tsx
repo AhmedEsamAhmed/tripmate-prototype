@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/Input";
 import { useApp } from "@/lib/context";
 import { MOCK_LOCATIONS } from "@/lib/mock-data";
 import { addTrip } from "@/lib/demo-store";
+import type { Trip } from "@/types";
 
 const PACKAGE_TEMPLATES = [
   { id: "airport", title: "Airport Transfer", from: "Ngurah Rai Airport", to: "Any hotel in Bali", duration: 2, price: 250000 },
@@ -55,7 +56,7 @@ function SupplierPackageTripForm() {
       capacity: parseInt(capacity, 10) || 4,
       itinerary: [`Pickup: ${fromLoc}`, `Drop-off: ${toLoc}`],
       isPackageTrip: true,
-    } as any);
+    } as Trip);
     router.push("/supplier/my-trips");
   };
 

@@ -1,16 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useParams, useRouter } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Chat } from "@/components/chat/Chat";
 import { MOCK_CHAT_MESSAGES } from "@/lib/mock-data";
 import type { ChatMessage } from "@/types";
 
 export default function ChatPage() {
-  const params = useParams();
-  const router = useRouter();
-  const id = params.id as string;
   const [messages, setMessages] = useState<ChatMessage[]>(MOCK_CHAT_MESSAGES);
 
   const handleSend = (content: string) => {

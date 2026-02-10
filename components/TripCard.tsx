@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
-import type { Trip, TripType, SupplierProfile } from "@/types";
+import type { Trip, TripType } from "@/types";
 
 interface TripCardProps {
   trip: Trip;
