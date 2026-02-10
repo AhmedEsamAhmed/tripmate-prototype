@@ -6,7 +6,16 @@ import type {
   SupplierProfile,
   ChatMessage,
 } from "@/types";
-import { getTrips, getOffers, getBookings } from "./demo-store";
+import {
+  getTrips,
+  getOffers,
+  getBookings,
+  getNotifications,
+  getWallet,
+  getPayouts,
+  getVerificationApplication,
+  getReviews,
+} from "./demo-store";
 
 // Mock current user – switch role for demo
 export const MOCK_USER_TRAVELER: User = {
@@ -89,6 +98,20 @@ export function getBookingsFeed(): Booking[] {
 }
 
 export const MOCK_BOOKINGS = getBookingsFeed();
+
+export { getNotifications, getWallet, getPayouts, getVerificationApplication, getReviews };
+
+/** Number of offers and min/max amounts for a trip (for traveler request cards) */
+export function getOfferCountForTrip(tripId: string): { count: number; minAmount?: number; maxAmount?: number } {
+  const list = getOffers().filter((o) => o.tripId === tripId && o.status !== "rejected");
+  if (list.length === 0) return { count: 0 };
+  const amounts = list.map((o) => o.amount);
+  return {
+    count: list.length,
+    minAmount: Math.min(...amounts),
+    maxAmount: Math.max(...amounts),
+  };
+}
 
 export const MOCK_CHAT_MESSAGES: ChatMessage[] = [
   {

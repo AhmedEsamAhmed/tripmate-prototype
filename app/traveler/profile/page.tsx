@@ -35,6 +35,12 @@ export default function TravelerProfilePage() {
         </div>
         <div className="space-y-1">
           <Link
+            href="/traveler/notifications"
+            className="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800"
+          >
+            Notifications
+          </Link>
+          <Link
             href="/traveler/profile/edit"
             className="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800"
           >

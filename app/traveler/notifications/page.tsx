@@ -19,16 +19,16 @@ function timeAgo(dateStr: string) {
   return d.toLocaleDateString();
 }
 
-export default function SupplierNotificationsPage() {
+export default function TravelerNotificationsPage() {
   const { user } = useApp();
   const notifications = user?.id ? getNotifications(user.id) : [];
 
   return (
     <>
-      <Header title="Notifications" backHref="/supplier" />
+      <Header title="Notifications" backHref="/traveler" />
       <main className="px-4 py-4">
         <p className="text-slate-600 text-sm mb-4">
-          New requests, negotiation updates, bookings, and reminders.
+          Booking confirmations, new offers, and trip reminders.
         </p>
         {notifications.length === 0 ? (
           <div className="empty-state">
@@ -39,7 +39,7 @@ export default function SupplierNotificationsPage() {
             {notifications.map((n) => (
               <Link
                 key={n.id}
-                href={n.link ?? "/supplier"}
+                href={n.link ?? "/traveler"}
                 className={`block rounded-2xl border border-slate-200 bg-white p-4 ${!n.read ? "border-l-4 border-l-primary-500" : ""}`}
               >
                 <div className="flex justify-between items-start">

@@ -89,7 +89,7 @@ export default function SupplierActiveTripPage() {
         <div className="space-y-4">
           <p className="text-slate-600 text-sm">Need help during the trip?</p>
           <a href="tel:+62123456789">
-            <Button fullWidth>Call ViaJalan support</Button>
+            <Button fullWidth>Call TripuLike support</Button>
           </a>
           <Button variant="secondary" fullWidth onClick={() => setShowSupport(false)}>
             Close

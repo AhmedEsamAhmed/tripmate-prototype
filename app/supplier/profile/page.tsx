@@ -42,6 +42,9 @@ export default function SupplierProfilePage() {
           </div>
         </div>
         <div className="space-y-1">
+          <Link href="/supplier/verification-status" className="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800">
+            Verification status
+          </Link>
           <Link href="/supplier/profile/edit" className="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800">
             Edit profile
           </Link>

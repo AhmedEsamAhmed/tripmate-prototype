@@ -23,7 +23,7 @@ export default function WelcomePage() {
           </svg>
         </div>
         <h1 className="text-2xl font-bold text-slate-900 text-center tracking-tight">
-          Welcome to ViaJalan
+          Welcome to TripuLike
         </h1>
         <p className="mt-3 text-center text-slate-600 text-[15px] leading-relaxed max-w-[280px]">
           Book drivers, guides, and tours—or offer your services. One app for travel.

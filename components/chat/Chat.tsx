@@ -103,7 +103,7 @@ export function Chat({
             </Button>
           </div>
           <p className="mt-1 text-xs text-slate-500 text-center">
-            Phone and email are not shared. Chat only within ViaJalan.
+            Phone and email are not shared. Chat only within TripuLike.
           </p>
         </form>
       )}

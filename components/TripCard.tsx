@@ -9,6 +9,11 @@ interface TripCardProps {
   trip: Trip;
   href: string;
   showSupplier?: boolean;
+  /** For trip requests: show how many offers received and price range */
+  offerCount?: number;
+  offerMinAmount?: number;
+  offerMaxAmount?: number;
+  offerCurrency?: string;
 }
 
 function formatPrice(price?: number, negotiable?: boolean, currency = "IDR") {
@@ -31,11 +36,26 @@ function locationsText(trip: Trip) {
   return trip.locations.map((l) => l.name).join(" → ");
 }
 
-export function TripCard({ trip, href, showSupplier = true }: TripCardProps) {
+export function TripCard({
+  trip,
+  href,
+  showSupplier = true,
+  offerCount = 0,
+  offerMinAmount,
+  offerMaxAmount,
+  offerCurrency = "IDR",
+}: TripCardProps) {
   const typeLabel: Record<TripType, string> = {
     request: "Trip request",
     pre_designed: "Pre-designed trip",
   };
+  const hasOffers = trip.type === "request" && offerCount > 0;
+  const offerPriceText =
+    hasOffers && offerMinAmount != null
+      ? offerMinAmount === offerMaxAmount
+        ? new Intl.NumberFormat("id-ID", { style: "currency", currency: offerCurrency, maximumFractionDigits: 0 }).format(offerMinAmount)
+        : `IDR ${offerMinAmount.toLocaleString("id-ID")} – ${(offerMaxAmount ?? offerMinAmount).toLocaleString("id-ID")}`
+      : null;
 
   return (
     <Link
@@ -63,6 +83,12 @@ export function TripCard({ trip, href, showSupplier = true }: TripCardProps) {
           {formatPrice(trip.price, trip.priceNegotiable, trip.currency)}
         </span>
       </div>
+      {hasOffers && (
+        <p className="mt-2 text-sm text-primary-600 font-medium">
+          {offerCount} offer{offerCount !== 1 ? "s" : ""} received
+          {offerPriceText ? ` from ${offerPriceText}` : ""}
+        </p>
+      )}
       {showSupplier && trip.supplier && (
         <div className="mt-3 flex items-center gap-2 border-t border-slate-100 pt-3">
           <div className="h-8 w-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 text-xs font-semibold">

@@ -12,8 +12,8 @@ export default function HelpPage() {
           Need help? Contact us or browse FAQs.
         </p>
         <div className="space-y-3">
-          <a href="mailto:support@viajalan.com" className="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800">
-            Email: support@viajalan.com
+          <a href="mailto:support@tripulike.com" className="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800">
+            Email: support@tripulike.com
           </a>
           <a href="tel:+62123456789" className="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800">
             Phone: +62 123 456 789

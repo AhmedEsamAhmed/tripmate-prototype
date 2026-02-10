@@ -76,10 +76,10 @@ export default function ActiveTripPage() {
       >
         <div className="space-y-4">
           <p className="text-slate-600 text-sm">
-            Need help? Use these options to get support from ViaJalan.
+            Need help? Use these options to get support from TripuLike.
           </p>
           <a href="tel:+62123456789">
-            <Button fullWidth>Call ViaJalan support</Button>
+            <Button fullWidth>Call TripuLike support</Button>
           </a>
           <Button variant="secondary" fullWidth onClick={() => setShowSupport(false)}>
             Report an issue (we will follow up)

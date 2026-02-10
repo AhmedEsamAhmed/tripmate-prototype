@@ -1,6 +1,6 @@
-# TripMate – Tourism Marketplace Prototype
+# TripuLike – Tourism Marketplace Prototype
 
-A mobile-first, interactive UI prototype for a two-sided tourism marketplace. **Travelers** can discover trip requests and pre-designed trips, create custom trips, receive offers, negotiate, book, and manage trips. **Suppliers** (drivers, tour guides, tour agencies) can respond to requests, submit offers, create pre-designed trips (guides/agencies only), and manage active trips.
+A mobile-first, interactive UI prototype for a two-sided tourism marketplace. **Travelers** can discover trip requests and pre-designed package trips, create custom trips, receive and compare offers, negotiate, book, and manage trips. **Suppliers** (drivers, tour guides, tour agencies) can respond to requests, submit offers, create and post package trips (guides/agencies only), manage wallet & payouts, and track verification status.
 
 ## Tech Stack
 
@@ -25,27 +25,31 @@ Open [http://localhost:3000](http://localhost:3000). The app redirects to the sp
 ### As Traveler
 
 1. **Sign up**: Welcome → Sign up → Role: "Travel & book trips" → Login (email/phone) → OTP → Password → Traveler home.
-2. **Explore**: Home shows a unified feed (trip requests + pre-designed trips). Use filters.
+2. **Explore**: Home shows a unified feed (trip requests + pre-designed trips). Trip requests show how many offers you’ve received and price range. Use filters.
 3. **Create trip**: "Request trip" → multi-stop locations, date/time, duration, service type, notes → Review → Submit (no price).
 4. **Offers**: Offers tab lists offers; open one → Accept / Counter / Reject. Counter goes to negotiation; Accept goes to booking.
-5. **Booking**: Booking summary → Payment (full/partial) → Payment success.
-6. **My Trips**: Tabs: Upcoming, Ongoing, Completed, Cancelled. Open a trip → schedule, supplier, payment status, cancel, chat.
-7. **Cancel**: Cancel trip → refund policy explanation → confirm → Refund status.
-8. **Active trip**: Live map (mocked), supplier info, chat, Emergency modal (call support, escalation).
-9. **Review**: After completed trip, leave rating and comment.
-10. **Profile**: Edit profile, payment history, language, help, logout.
-11. **Chat**: Opens from offer/trip; timestamped messages; system messages for price lock/booking; no phone/email shown.
+5. **Booking**: Booking summary → Payment (full/partial) → Payment success → **View my trip** (full booking details).
+6. **View booking**: After payment, view your booked trip with full info, itinerary, supplier, and payment status.
+7. **My Trips**: Tabs: Upcoming, Ongoing, Completed, Cancelled. Open a trip → schedule, supplier, payment status, cancel, chat.
+8. **Cancel**: Cancel trip → refund policy explanation → confirm → Refund status.
+9. **Active trip**: Live map (mocked), supplier info, chat, Emergency modal (call support, escalation).
+10. **Review**: After completed trip, leave rating and comment.
+11. **Profile**: Notifications, edit profile, payment history, language, help, logout.
+12. **Notifications**: Booking confirmations, new offers, trip reminders (traveler).
+13. **Chat**: Opens from offer/trip; timestamped messages; system messages for price lock/booking; no phone/email shown.
 
 ### As Supplier
 
 1. **Sign up**: Welcome → Sign up → "Offer my services" → Supplier type (Driver / Tour Guide / Tour Agency) → Documents → Service details (locations, languages, availability) → Verification status (pending/approved/rejected).
-2. **Dashboard**: Earnings summary, upcoming/completed/cancelled counts, upcoming trips list.
-3. **Requests**: New trip requests → open request → Submit offer (price + message) → Negotiation → Booking confirmed (simulated).
-4. **Create trip** (Guides & Agencies only): Itinerary, duration, fixed/negotiable price, capacity, publish. **Drivers** see restricted message.
-5. **My trips**: List of trips; link to create trip for non-drivers.
-6. **Active trip**: Trip detail → Start trip → Map (mocked) → End trip (with confirmation).
-7. **Profile**: Public profile view, verification badge, edit profile, availability schedule, reviews & ratings, logout.
-8. **Notifications**: New requests, negotiation updates, booking confirmations, reminders, cancellations.
+2. **Dashboard**: Quick actions (Wallet, Verification status, Requests, Bookings), earnings, upcoming/completed/cancelled counts.
+3. **Wallet**: Available balance, pending amount, total earnings, payout history and status.
+4. **Verification status**: Check application status (pending/approved/rejected); re-submit if rejected.
+5. **Requests**: New trip requests → open request → Submit offer (price + message) → Negotiation → Booking confirmed (simulated).
+6. **Create trip** (Guides & Agencies only): Itinerary, duration, fixed/negotiable price, capacity, publish. **Drivers** see restricted message.
+7. **My trips**: List of trips; link to create trip for non-drivers.
+8. **Active trip**: Trip detail → Start trip → Map (mocked) → End trip (with confirmation).
+9. **Profile**: Verification status, edit profile, availability schedule, reviews & ratings, logout.
+10. **Notifications**: New requests, negotiation updates, booking confirmations, reminders, cancellations.
 
 ## Project Structure
 
@@ -141,4 +145,4 @@ Shown on cancellation and refund-status screens.
 
 ---
 
-**ViaJalan** – Tourism marketplace prototype. Ready for investor demo, UX testing, and developer handoff.
+**TripuLike** – Tourism marketplace prototype. Blue & orange theme. Ready for investor demo, UX testing, and developer handoff.

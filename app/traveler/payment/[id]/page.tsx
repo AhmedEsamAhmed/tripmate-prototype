@@ -34,7 +34,7 @@ export default function PaymentPage() {
       if (simulateFailure) {
         router.push("/traveler/payment-failure");
       } else {
-        router.push("/traveler/payment-success");
+        router.push(`/traveler/payment-success?tripId=${tripId}`);
       }
     }, 1500);
   };

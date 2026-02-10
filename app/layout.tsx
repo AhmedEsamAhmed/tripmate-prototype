@@ -3,7 +3,7 @@ import "./globals.css";
 import { AppProvider } from "@/lib/context";
 
 export const metadata: Metadata = {
-  title: "ViaJalan – Tourism Marketplace",
+  title: "TripuLike – Tourism Marketplace",
   description: "Connect travelers with local drivers, guides, and tour agencies.",
 };
 

@@ -6,7 +6,7 @@ import { Header } from "@/components/Header";
 import { TripCard } from "@/components/TripCard";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
-import { getTripsFeed } from "@/lib/mock-data";
+import { getTripsFeed, getOfferCountForTrip } from "@/lib/mock-data";
 
 export default function TravelerHomePage() {
   const [locationFilter, setLocationFilter] = useState("");
@@ -29,7 +29,7 @@ export default function TravelerHomePage() {
   return (
     <>
       <Header
-        title="ViaJalan"
+        title="TripuLike"
         rightAction={
           <Link
             href="/traveler/create-trip"
@@ -83,13 +83,19 @@ export default function TravelerHomePage() {
               </Link>
             </div>
           ) : (
-            filteredTrips.map((trip) => (
-              <TripCard
-                key={trip.id}
-                trip={trip}
-                href={`/traveler/trip/${trip.id}`}
-              />
-            ))
+            filteredTrips.map((trip) => {
+              const offers = getOfferCountForTrip(trip.id);
+              return (
+                <TripCard
+                  key={trip.id}
+                  trip={trip}
+                  href={`/traveler/trip/${trip.id}`}
+                  offerCount={offers.count}
+                  offerMinAmount={offers.minAmount}
+                  offerMaxAmount={offers.maxAmount}
+                />
+              );
+            })
           )}
         </div>
       </main>

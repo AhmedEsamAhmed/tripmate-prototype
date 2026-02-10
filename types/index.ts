@@ -140,3 +140,82 @@ export const REFUND_POLICY = {
   fullRefundHours: 24,
   halfRefundHours: 10,
 } as const;
+
+// Notifications
+export type NotificationType =
+  | "new_request"
+  | "new_offer"
+  | "offer_accepted"
+  | "offer_rejected"
+  | "booking_confirmed"
+  | "payment_received"
+  | "trip_reminder"
+  | "trip_started"
+  | "trip_ended"
+  | "cancellation"
+  | "review_received"
+  | "verification_update"
+  | "trip_nearby";
+
+export interface Notification {
+  id: string;
+  userId: string;
+  type: NotificationType;
+  title: string;
+  body: string;
+  link?: string;
+  read: boolean;
+  createdAt: string;
+}
+
+// Supplier verification application
+export type VerificationStep = "type" | "documents" | "service_details" | "submitted";
+
+export interface SupplierVerificationApplication {
+  id: string;
+  userId: string;
+  supplierType: SupplierType;
+  status: VerificationStatus;
+  step: VerificationStep;
+  documentsUploaded: boolean;
+  serviceDetailsCompleted: boolean;
+  submittedAt?: string;
+  reviewedAt?: string;
+  rejectionReason?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+// Wallet & payouts (supplier)
+export type PayoutStatus = "pending" | "processing" | "completed" | "failed";
+
+export interface WalletBalance {
+  supplierId: string;
+  available: number;
+  pending: number;
+  totalEarnings: number;
+  currency: string;
+}
+
+export interface Payout {
+  id: string;
+  supplierId: string;
+  amount: number;
+  currency: string;
+  status: PayoutStatus;
+  requestedAt: string;
+  completedAt?: string;
+}
+
+// Reviews
+export interface Review {
+  id: string;
+  tripId: string;
+  bookingId: string;
+  reviewerId: string;
+  revieweeId: string;
+  reviewerRole: UserRole;
+  rating: number;
+  comment?: string;
+  createdAt: string;
+}

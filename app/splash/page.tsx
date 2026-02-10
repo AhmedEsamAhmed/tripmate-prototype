@@ -27,7 +27,7 @@ export default function SplashPage() {
   }, [mounted, isLoggedIn, user, router]);
 
   return (
-    <div className="mobile-container flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-primary-600 via-primary-700 to-teal-800 px-6">
+    <div className="mobile-container flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-primary-600 via-primary-700 to-accent-600 px-6">
       <div className="flex flex-col items-center gap-8">
         <div className="h-24 w-24 rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center shadow-lg">
           <svg
@@ -45,7 +45,7 @@ export default function SplashPage() {
           </svg>
         </div>
         <div className="text-center">
-          <h1 className="text-3xl font-bold text-white tracking-tight">ViaJalan</h1>
+          <h1 className="text-3xl font-bold text-white tracking-tight">TripuLike</h1>
           <p className="mt-2 text-center text-primary-100 text-sm max-w-[240px]">
             Your trusted tourism marketplace
           </p>
