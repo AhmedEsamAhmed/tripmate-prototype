@@ -22,7 +22,7 @@ export default function PaymentPage() {
   if (!trip || !offer) {
     return (
       <>
-        <Header title="Payment" backHref="/traveler/booking/" />
+        <Header title="Payment" backHref={`/traveler/booking/${tripId}`} />
         <div className="empty-state"><p>Booking not found.</p></div>
       </>
     );
