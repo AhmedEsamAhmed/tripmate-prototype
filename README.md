@@ -37,6 +37,7 @@ Open [http://localhost:3000](http://localhost:3000). The app redirects to the sp
 11. **Profile**: Notifications, edit profile, payment history, language, help, logout.
 12. **Notifications**: Booking confirmations, new offers, trip reminders (traveler).
 13. **Chat**: Opens from offer/trip; timestamped messages; system messages for price lock/booking; no phone/email shown.
+14. **Explore (Social Feed)**: Tab **Explore** → public feed of traveler posts. Search, filter by location/tag, trending destinations. Like, comment, save. **New post** (customers only): caption, location, tag supplier from bookings, hashtags, 1–5 images.
 
 ### As Supplier
 
@@ -50,6 +51,14 @@ Open [http://localhost:3000](http://localhost:3000). The app redirects to the sp
 8. **Active trip**: Trip detail → Start trip → Map (mocked) → End trip (with confirmation).
 9. **Profile**: Verification status, edit profile, availability schedule, reviews & ratings, logout.
 10. **Notifications**: New requests, negotiation updates, booking confirmations, reminders, cancellations.
+11. **Network (B2B)**: Tab **Network** (verified suppliers only). Professional feed: post types (Update, Collaboration Request, Driver/Guide Needed, Referral, News, Question). Filter by region, role, post type. Comment, Connect, Message. **Connections** and **Messages** pages for connection requests and DMs.
+
+## Networking Module (Modular)
+
+- **Traveler Social Feed** (`/explore`): Public feed; customers can post (1–5 images, location, tag supplier, hashtags), like, comment, save. Suppliers can view, like, comment. Demo data: 5 travelers, multiple posts with Unsplash placeholders.
+- **Supplier Professional Network** (`/supplier/network`): Private B2B feed; verified suppliers only. Post types, filters, connections, messages. Demo: collaboration request, driver needed, news, referral.
+- **API**: `GET/POST /api/social/posts`, `POST /api/social/posts/:id/like`, `POST /api/social/posts/:id/comment`, `GET/PATCH/DELETE /api/social/posts/:id`; `GET/POST /api/network/posts`, `POST /api/network/connect`, `POST /api/network/message`, `GET /api/network/connections`.
+- **No changes** to existing booking, payment, or negotiation logic.
 
 ## Project Structure
 

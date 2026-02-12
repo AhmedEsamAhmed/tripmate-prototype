@@ -36,3 +36,6 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
+
+# Duplicate / nested clone (do not commit)
+tripmate-prototype/
